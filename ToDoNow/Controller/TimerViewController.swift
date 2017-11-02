@@ -49,7 +49,7 @@ class TimerViewController: UIViewController {
             timer.invalidate()
             // SEND NOTIFICATION OF STOP
         } else {
-            timerLabel.text = timeString(time: TimeInterval(seconds))
+            timerLabel.text = Utils.timeString(time: TimeInterval(seconds))
             seconds -= 1
         }        
     }
@@ -74,15 +74,8 @@ class TimerViewController: UIViewController {
         timer.invalidate()
         if setTotalSeconds() {
             isTimerRunning = false
-            timerLabel.text = timeString(time: TimeInterval(seconds))
+            timerLabel.text = Utils.timeString(time: TimeInterval(seconds))
         }
-    }
-    
-    func timeString(time: TimeInterval) -> String {
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format: "%02i:%02i:%02i", arguments: [hours, minutes, seconds])
     }
     
 }

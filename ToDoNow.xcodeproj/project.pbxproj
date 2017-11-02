@@ -10,6 +10,7 @@
 		4804EF231FAB980E009A94BE /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804EF221FAB980E009A94BE /* StopWatchViewController.swift */; };
 		4804EF261FAB9DBD009A94BE /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804EF251FAB9DBD009A94BE /* ItemTableViewCell.swift */; };
 		4804EF281FABA042009A94BE /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804EF271FABA042009A94BE /* ItemManager.swift */; };
+		4804EF2A1FABA706009A94BE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804EF291FABA706009A94BE /* Utils.swift */; };
 		48135FDB1FAAB28800DBF9C1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDA1FAAB28800DBF9C1 /* Item.swift */; };
 		48135FDE1FAAB64D00DBF9C1 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */; };
 		48135FE01FAAB76200DBF9C1 /* ToDoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */; };
@@ -25,6 +26,7 @@
 		4804EF221FAB980E009A94BE /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
 		4804EF251FAB9DBD009A94BE /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		4804EF271FABA042009A94BE /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		4804EF291FABA706009A94BE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		48135FDA1FAAB28800DBF9C1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDataSource.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				48B077D01FA906AB0015B405 /* Assets.xcassets */,
 				48B077D21FA906AB0015B405 /* LaunchScreen.storyboard */,
 				48B077D51FA906AB0015B405 /* Info.plist */,
+				4804EF291FABA706009A94BE /* Utils.swift */,
 			);
 			path = ToDoNow;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				48B077CC1FA906AB0015B405 /* ViewController.swift in Sources */,
 				48135FDB1FAAB28800DBF9C1 /* Item.swift in Sources */,
 				48B077CA1FA906AB0015B405 /* AppDelegate.swift in Sources */,
+				4804EF2A1FABA706009A94BE /* Utils.swift in Sources */,
 				4804EF261FAB9DBD009A94BE /* ItemTableViewCell.swift in Sources */,
 				48135FE21FAABC2000DBF9C1 /* TimerViewController.swift in Sources */,
 				4804EF231FAB980E009A94BE /* StopWatchViewController.swift in Sources */,

@@ -29,8 +29,8 @@ class ItemTableViewCell: UITableViewCell {
     
     func configure(with item: Item) {
         itemNameLabel.text = item.name
-        itemDurationLabel.text = "Duration: \(item.seconds)"        
-        itemTimeSpentLabel.text = "Time spent: \(item.timeSpent)"
+        itemDurationLabel.text = "Duration: \(Utils.timeString(time: TimeInterval(item.seconds)))"
+        itemTimeSpentLabel.text = "Time spent: \(Utils.timeString(time: TimeInterval(item.timeSpent)))"
         itemPriorityLabel.text = item.priority.rawValue
         completeButton.setTitle(item.status == .incompleted ? "Complete"  : "Restore", for: .normal)
     }

@@ -30,7 +30,7 @@ class StopWatchViewController: UIViewController {
     
     @objc func updateTimer() {
         seconds += 1
-        timeLabel.text = timeString(time: TimeInterval(seconds))
+        timeLabel.text = Utils.timeString(time: TimeInterval(seconds))
     }
     
     @IBAction func startPressed(_ sender: Any) {
@@ -42,7 +42,7 @@ class StopWatchViewController: UIViewController {
     @IBAction func resetPressed(_ sender: Any) {
         timer.invalidate()
         seconds = 0
-        timeLabel.text = timeString(time: TimeInterval(seconds))
+        timeLabel.text = Utils.timeString(time: TimeInterval(seconds))
         isTimerRunning = false
     }
     
@@ -56,10 +56,4 @@ class StopWatchViewController: UIViewController {
         }
     }
     
-    func timeString(time: TimeInterval) -> String {
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format: "%02i:%02i:%02i", arguments: [hours, minutes, seconds])
-    }
 }
