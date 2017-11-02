@@ -23,4 +23,7 @@ class ToDoDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
+    func updateData() {
+        itemManager.sortByPriority()
+    }
 }

@@ -16,9 +16,11 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var itemPriorityLabel: UILabel!
     
+    var item: Item?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        completeButton.addTarget(self, action: #selector(ItemTableViewCell.completeItem(_:)), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,6 +35,14 @@ class ItemTableViewCell: UITableViewCell {
         itemTimeSpentLabel.text = "Time spent: \(Utils.timeString(time: TimeInterval(item.timeSpent)))"
         itemPriorityLabel.text = item.priority.rawValue
         completeButton.setTitle(item.status == .incompleted ? "Complete"  : "Restore", for: .normal)
+        self.item = item
+    }
+    
+    @objc func completeItem(_ sender: UIButton) {
+        if let item = item {
+            item.status = item.status == .incompleted ? .completed : .incompleted
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateTable"), object: nil)
+        }
     }
 
 }

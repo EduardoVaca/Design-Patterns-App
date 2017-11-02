@@ -19,6 +19,7 @@ class ToDoListViewController: UIViewController {
         tableView.dataSource = dataSource
         tableView.rowHeight = 80
         dataSource.itemManager.sortByPriority()
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "UpdateTable"), object: nil, queue: nil, using: updateTable)
     }
     
     @objc func goToTimer(_ sender: UIButton) {
@@ -31,6 +32,11 @@ class ToDoListViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let stopWatchVC = storyBoard.instantiateViewController(withIdentifier: "StopWatchViewController") as! StopWatchViewController
         self.navigationController?.pushViewController(stopWatchVC, animated: true)
+    }
+    
+    func updateTable(notification: Notification) {
+        dataSource.updateData()
+        tableView.reloadData()
     }
 
 }
