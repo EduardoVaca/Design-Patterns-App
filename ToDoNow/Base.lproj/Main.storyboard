@@ -105,18 +105,36 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnm-ds-r33">
                                 <rect key="frame" x="175" y="444" width="34" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="start:" destination="l5O-Ax-1yp" eventType="touchUpInside" id="rIg-xK-6pN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwE-VW-xVd">
+                                <rect key="frame" x="52" y="444" width="46" height="30"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pausePressed:" destination="l5O-Ax-1yp" eventType="touchUpInside" id="u3p-4Z-I4M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXF-9i-fRu">
+                                <rect key="frame" x="284" y="444" width="46" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetPressed:" destination="l5O-Ax-1yp" eventType="touchUpInside" id="7sa-0F-SVK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zh1-Cm-ID0" firstAttribute="centerY" secondItem="Auy-6U-Bax" secondAttribute="centerY" id="1Uv-3J-2zu"/>
+                            <constraint firstItem="nwE-VW-xVd" firstAttribute="centerY" secondItem="dnm-ds-r33" secondAttribute="centerY" id="3gz-oe-Srb"/>
                             <constraint firstItem="Wjn-Wi-wdU" firstAttribute="centerX" secondItem="AbQ-55-Nbj" secondAttribute="centerX" id="74l-W7-STX"/>
                             <constraint firstItem="tEO-2n-uE4" firstAttribute="centerY" secondItem="Wjn-Wi-wdU" secondAttribute="centerY" id="9qa-9t-GvO"/>
+                            <constraint firstItem="zXF-9i-fRu" firstAttribute="centerY" secondItem="dnm-ds-r33" secondAttribute="centerY" id="N3r-tT-LKV"/>
                             <constraint firstItem="Auy-6U-Bax" firstAttribute="centerX" secondItem="tEO-2n-uE4" secondAttribute="centerX" id="PDN-v8-dgY"/>
+                            <constraint firstItem="nwE-VW-xVd" firstAttribute="leading" secondItem="tEO-2n-uE4" secondAttribute="leading" id="QUd-qo-pJr"/>
                             <constraint firstItem="N77-S5-n4Q" firstAttribute="leading" secondItem="Wjn-Wi-wdU" secondAttribute="trailing" constant="30" id="Vgs-60-uap"/>
                             <constraint firstItem="N77-S5-n4Q" firstAttribute="centerY" secondItem="Wjn-Wi-wdU" secondAttribute="centerY" id="ZX6-8c-QX6"/>
                             <constraint firstItem="RvZ-no-V1P" firstAttribute="centerY" secondItem="zh1-Cm-ID0" secondAttribute="centerY" id="aij-x4-2RQ"/>
@@ -125,6 +143,7 @@
                             <constraint firstItem="k7l-y2-hhc" firstAttribute="centerY" secondItem="AbQ-55-Nbj" secondAttribute="centerY" id="d9C-7V-Ygg"/>
                             <constraint firstItem="RvZ-no-V1P" firstAttribute="centerX" secondItem="N77-S5-n4Q" secondAttribute="centerX" id="glm-aa-CEK"/>
                             <constraint firstItem="Wjn-Wi-wdU" firstAttribute="top" secondItem="OOZ-T7-cBZ" secondAttribute="top" constant="50" id="n4F-1D-iAm"/>
+                            <constraint firstItem="zXF-9i-fRu" firstAttribute="trailing" secondItem="N77-S5-n4Q" secondAttribute="trailing" id="nQP-iY-RG9"/>
                             <constraint firstItem="zh1-Cm-ID0" firstAttribute="centerX" secondItem="Wjn-Wi-wdU" secondAttribute="centerX" id="ook-3W-9Gn"/>
                             <constraint firstItem="dnm-ds-r33" firstAttribute="top" secondItem="k7l-y2-hhc" secondAttribute="bottom" constant="83.5" id="pS1-Sb-f5F"/>
                             <constraint firstItem="k7l-y2-hhc" firstAttribute="centerX" secondItem="AbQ-55-Nbj" secondAttribute="centerX" id="reO-O5-d3w"/>
