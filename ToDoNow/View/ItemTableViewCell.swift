@@ -14,6 +14,7 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemDurationLabel: UILabel!
     @IBOutlet weak var itemTimeSpentLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
+    @IBOutlet weak var itemPriorityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,8 @@ class ItemTableViewCell: UITableViewCell {
         itemNameLabel.text = item.name
         itemDurationLabel.text = "Duration: \(item.seconds)"        
         itemTimeSpentLabel.text = "Time spent: \(item.timeSpent)"
+        itemPriorityLabel.text = item.priority.rawValue
+        completeButton.setTitle(item.status == .incompleted ? "Complete"  : "Restore", for: .normal)
     }
 
 }

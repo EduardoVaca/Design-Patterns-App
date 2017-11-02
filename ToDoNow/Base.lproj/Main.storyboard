@@ -51,10 +51,18 @@
                                                     <rect key="frame" x="300" y="24" width="67" height="30"/>
                                                     <state key="normal" title="Complete"/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgc-UC-PPQ">
+                                                    <rect key="frame" x="107" y="33.5" width="38" height="13.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7zo-81-llZ" firstAttribute="top" secondItem="Oef-Mo-j6C" secondAttribute="bottom" constant="5" id="0fg-be-zTC"/>
+                                                <constraint firstItem="Sgc-UC-PPQ" firstAttribute="centerY" secondItem="ked-T9-Dix" secondAttribute="centerY" id="6OG-fV-Kem"/>
                                                 <constraint firstItem="FEE-6e-DHd" firstAttribute="top" secondItem="7zo-81-llZ" secondAttribute="bottom" constant="5" id="84n-AR-DDg"/>
+                                                <constraint firstItem="Sgc-UC-PPQ" firstAttribute="leading" secondItem="7zo-81-llZ" secondAttribute="trailing" constant="50.5" id="Hr8-H6-S5O"/>
                                                 <constraint firstItem="Oef-Mo-j6C" firstAttribute="leading" secondItem="ked-T9-Dix" secondAttribute="leadingMargin" id="ObS-dh-jRS"/>
                                                 <constraint firstItem="D9S-Kp-7q6" firstAttribute="trailing" secondItem="ked-T9-Dix" secondAttribute="trailingMargin" id="Zqy-F9-vhU"/>
                                                 <constraint firstItem="7zo-81-llZ" firstAttribute="leading" secondItem="Oef-Mo-j6C" secondAttribute="leading" id="ciq-Fb-daH"/>
@@ -67,6 +75,7 @@
                                             <outlet property="completeButton" destination="D9S-Kp-7q6" id="SiW-LT-qBF"/>
                                             <outlet property="itemDurationLabel" destination="7zo-81-llZ" id="68j-vU-V3k"/>
                                             <outlet property="itemNameLabel" destination="Oef-Mo-j6C" id="Gub-T3-gNQ"/>
+                                            <outlet property="itemPriorityLabel" destination="Sgc-UC-PPQ" id="viC-vA-uiB"/>
                                             <outlet property="itemTimeSpentLabel" destination="FEE-6e-DHd" id="CJr-GP-3TP"/>
                                         </connections>
                                     </tableViewCell>

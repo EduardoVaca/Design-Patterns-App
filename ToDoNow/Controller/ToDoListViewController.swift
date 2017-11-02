@@ -18,13 +18,8 @@ class ToDoListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = dataSource
         tableView.rowHeight = 80
+        dataSource.itemManager.sortByPriority()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     @objc func goToTimer(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
