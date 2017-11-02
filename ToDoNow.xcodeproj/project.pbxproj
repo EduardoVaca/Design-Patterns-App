@@ -10,6 +10,7 @@
 		48135FDB1FAAB28800DBF9C1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDA1FAAB28800DBF9C1 /* Item.swift */; };
 		48135FDE1FAAB64D00DBF9C1 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */; };
 		48135FE01FAAB76200DBF9C1 /* ToDoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */; };
+		48135FE21FAABC2000DBF9C1 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FE11FAABC2000DBF9C1 /* TimerViewController.swift */; };
 		48B077CA1FA906AB0015B405 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B077C91FA906AB0015B405 /* AppDelegate.swift */; };
 		48B077CC1FA906AB0015B405 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B077CB1FA906AB0015B405 /* ViewController.swift */; };
 		48B077CF1FA906AB0015B405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B077CD1FA906AB0015B405 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		48135FDA1FAAB28800DBF9C1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDataSource.swift; sourceTree = "<group>"; };
+		48135FE11FAABC2000DBF9C1 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		48B077C61FA906AB0015B405 /* ToDoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B077C91FA906AB0015B405 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48B077CB1FA906AB0015B405 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */,
 				48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */,
+				48135FE11FAABC2000DBF9C1 /* TimerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				48B077CC1FA906AB0015B405 /* ViewController.swift in Sources */,
 				48135FDB1FAAB28800DBF9C1 /* Item.swift in Sources */,
 				48B077CA1FA906AB0015B405 /* AppDelegate.swift in Sources */,
+				48135FE21FAABC2000DBF9C1 /* TimerViewController.swift in Sources */,
 				48135FE01FAAB76200DBF9C1 /* ToDoDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
