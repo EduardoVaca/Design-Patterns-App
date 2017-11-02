@@ -17,8 +17,6 @@ class TimerViewController: UIViewController {
     
     var timer = Timer()
     var seconds = 0
-    var minutes = 0
-    var hours = 0
     var isTimerRunning = false
     var resumeTapped = false
     
@@ -33,23 +31,37 @@ class TimerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setTotalSeconds() -> Bool {
+        if let seconds = secondsTextField.text,
+            let secondsValue = Int(seconds),
+            let minutes = minutesTextField.text,
+            let minutesValue = Int(minutes),
+            let hours = hoursTextField.text,
+            let hoursValue = Int(hours) {
+            self.seconds = secondsValue + (minutesValue * 60) + (hoursValue * 3600)
+            return true
+        }
+        return false
+    }
+    
     func runTimer() {
         isTimerRunning = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     
     @objc func updateTimer() {
-        timerLabel.text = timeString(time: TimeInterval(seconds))
-        seconds -= 1
+        if seconds < 0 {
+            timer.invalidate()
+            // SEND NOTIFICATION OF STOP
+        } else {
+            timerLabel.text = timeString(time: TimeInterval(seconds))
+            seconds -= 1
+        }        
     }
 
     @IBAction func start(_ sender: Any) {
-        if !isTimerRunning {
-            if let seconds = secondsTextField.text,
-                let value = Int(seconds) {
-                self.seconds = value                
-                runTimer()
-            }
+        if !isTimerRunning && setTotalSeconds(){
+            runTimer()
         }
     }
     
@@ -65,13 +77,9 @@ class TimerViewController: UIViewController {
     
     @IBAction func resetPressed(_ sender: Any) {
         timer.invalidate()
-        
-        if let seconds = secondsTextField.text,
-            let value = Int(seconds) {
-            self.seconds = value
-            
+        if setTotalSeconds() {
             isTimerRunning = false
-            timerLabel.text = timeString(time: TimeInterval(seconds)!)
+            timerLabel.text = timeString(time: TimeInterval(seconds))
         }
     }
     
