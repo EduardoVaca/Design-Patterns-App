@@ -10,12 +10,16 @@ import UIKit
 
 class ToDoDataSource: NSObject, UITableViewDataSource {
     
+    let itemManager = ItemManager()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return itemManager.itemsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemTableViewCell
+        let item = itemManager.item(at: indexPath.row)
+        cell.configure(with: item)
         return cell
     }
     

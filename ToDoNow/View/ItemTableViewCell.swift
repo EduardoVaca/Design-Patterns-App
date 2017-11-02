@@ -25,5 +25,11 @@ class ItemTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure(with item: Item) {
+        itemNameLabel.text = item.name
+        itemDurationLabel.text = "Duration: \(item.seconds)"        
+        itemTimeSpentLabel.text = "Time spent: \(item.timeSpent)"
+    }
 
 }

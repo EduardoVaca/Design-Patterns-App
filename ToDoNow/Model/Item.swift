@@ -27,7 +27,7 @@ public class Item {
     var priority: Priority
     var status: Status
     
-    init(name: String, seconds: Int, minutes: Int, priority: Priority) {
+    init(name: String, seconds: Int, priority: Priority) {
         self.name = name
         self.seconds = seconds
         self.priority = priority
