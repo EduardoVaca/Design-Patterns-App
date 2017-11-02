@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +21,56 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bae-G6-G4M">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" rowHeight="80" id="jsA-Oz-cZD" customClass="ItemTableViewCell" customModule="ToDoNow" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jsA-Oz-cZD" id="ked-T9-Dix">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-Mo-j6C">
+                                                    <rect key="frame" x="8" y="8" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zo-81-llZ">
+                                                    <rect key="frame" x="8" y="34" width="48.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time spent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEE-6e-DHd">
+                                                    <rect key="frame" x="8" y="53.5" width="63" height="14.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9S-Kp-7q6">
+                                                    <rect key="frame" x="300" y="24" width="67" height="30"/>
+                                                    <state key="normal" title="Complete"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7zo-81-llZ" firstAttribute="top" secondItem="Oef-Mo-j6C" secondAttribute="bottom" constant="5" id="0fg-be-zTC"/>
+                                                <constraint firstItem="FEE-6e-DHd" firstAttribute="top" secondItem="7zo-81-llZ" secondAttribute="bottom" constant="5" id="84n-AR-DDg"/>
+                                                <constraint firstItem="Oef-Mo-j6C" firstAttribute="leading" secondItem="ked-T9-Dix" secondAttribute="leadingMargin" id="ObS-dh-jRS"/>
+                                                <constraint firstItem="D9S-Kp-7q6" firstAttribute="trailing" secondItem="ked-T9-Dix" secondAttribute="trailingMargin" id="Zqy-F9-vhU"/>
+                                                <constraint firstItem="7zo-81-llZ" firstAttribute="leading" secondItem="Oef-Mo-j6C" secondAttribute="leading" id="ciq-Fb-daH"/>
+                                                <constraint firstItem="D9S-Kp-7q6" firstAttribute="centerY" secondItem="ked-T9-Dix" secondAttribute="centerY" id="dCr-xw-Dy4"/>
+                                                <constraint firstItem="Oef-Mo-j6C" firstAttribute="top" secondItem="ked-T9-Dix" secondAttribute="topMargin" id="epT-ev-Aww"/>
+                                                <constraint firstItem="FEE-6e-DHd" firstAttribute="leading" secondItem="7zo-81-llZ" secondAttribute="leading" id="zWi-4l-cke"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="completeButton" destination="D9S-Kp-7q6" id="SiW-LT-qBF"/>
+                                            <outlet property="itemDurationLabel" destination="7zo-81-llZ" id="68j-vU-V3k"/>
+                                            <outlet property="itemNameLabel" destination="Oef-Mo-j6C" id="Gub-T3-gNQ"/>
+                                            <outlet property="itemTimeSpentLabel" destination="FEE-6e-DHd" id="CJr-GP-3TP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="delegate" destination="Jyc-bG-2Hs" id="qNR-im-Dep"/>
                                 </connections>

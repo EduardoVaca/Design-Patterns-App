@@ -16,7 +16,7 @@ class ToDoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = dataSource
-        tableView.rowHeight = 100
+        tableView.rowHeight = 80
     }
 
     override func didReceiveMemoryWarning() {

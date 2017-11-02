@@ -14,17 +14,24 @@ enum Priority {
     case low
 }
 
+enum Status {
+    case completed
+    case incompleted
+}
+
 public class Item {
     
     var name: String
     var seconds: Int
-    var minutes: Int
+    var timeSpent: Int
     var priority: Priority
+    var status: Status
     
     init(name: String, seconds: Int, minutes: Int, priority: Priority) {
         self.name = name
         self.seconds = seconds
-        self.minutes = minutes
         self.priority = priority
+        self.status = Status.incompleted
+        self.timeSpent = 0
     }
 }
