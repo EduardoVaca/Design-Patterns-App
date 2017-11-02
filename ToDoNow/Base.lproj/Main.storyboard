@@ -38,6 +38,7 @@
                     <connections>
                         <outlet property="tableView" destination="bae-G6-G4M" id="mD0-sd-rem"/>
                         <segue destination="l5O-Ax-1yp" kind="show" id="aSV-4l-29o"/>
+                        <segue destination="GQc-Qj-pOI" kind="show" id="lfB-al-Rvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oU-JJ-9eL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,23 +104,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnm-ds-r33">
-                                <rect key="frame" x="175" y="444" width="34" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnm-ds-r33">
+                                <rect key="frame" x="162.5" y="444" width="50" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="start:" destination="l5O-Ax-1yp" eventType="touchUpInside" id="rIg-xK-6pN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwE-VW-xVd">
-                                <rect key="frame" x="52" y="444" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwE-VW-xVd">
+                                <rect key="frame" x="45" y="449.5" width="42" height="30"/>
                                 <state key="normal" title="Pause"/>
                                 <connections>
                                     <action selector="pausePressed:" destination="l5O-Ax-1yp" eventType="touchUpInside" id="u3p-4Z-I4M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXF-9i-fRu">
-                                <rect key="frame" x="284" y="444" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXF-9i-fRu">
+                                <rect key="frame" x="291" y="449.5" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="resetPressed:" destination="l5O-Ax-1yp" eventType="touchUpInside" id="7sa-0F-SVK"/>
@@ -161,6 +162,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4w-Jb-ji6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2556" y="348.57571214392806"/>
+        </scene>
+        <!--Stop Watch View Controller-->
+        <scene sceneID="nrv-ND-hey">
+            <objects>
+                <viewController storyboardIdentifier="StopWatchViewController" id="GQc-Qj-pOI" customClass="StopWatchViewController" customModule="ToDoNow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Gc-Yu-cGX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-ov-eJR">
+                                <rect key="frame" x="93" y="306" width="189.5" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-Ma-ODb">
+                                <rect key="frame" x="165" y="114" width="44" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stopwatch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVt-jX-w13">
+                                <rect key="frame" x="144" y="148.5" width="86" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyh-CR-Kd6">
+                                <rect key="frame" x="167" y="445" width="42" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Start"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW3-gT-Fw0">
+                                <rect key="frame" x="296" y="448" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBZ-79-M3M">
+                                <rect key="frame" x="40" y="448" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kVt-jX-w13" firstAttribute="centerX" secondItem="1sW-Ma-ODb" secondAttribute="centerX" id="4zw-hw-NRq"/>
+                            <constraint firstItem="IBZ-79-M3M" firstAttribute="centerY" secondItem="Eyh-CR-Kd6" secondAttribute="centerY" id="9QE-Hz-NyV"/>
+                            <constraint firstItem="IBZ-79-M3M" firstAttribute="leading" secondItem="jtH-n3-6JR" secondAttribute="leading" constant="40" id="EZ8-fN-Gxb"/>
+                            <constraint firstItem="ATh-ov-eJR" firstAttribute="centerY" secondItem="2Gc-Yu-cGX" secondAttribute="centerY" id="KDn-qG-b5d"/>
+                            <constraint firstItem="mW3-gT-Fw0" firstAttribute="centerY" secondItem="Eyh-CR-Kd6" secondAttribute="centerY" id="Pfc-hJ-hdr"/>
+                            <constraint firstItem="kVt-jX-w13" firstAttribute="top" secondItem="1sW-Ma-ODb" secondAttribute="bottom" constant="15" id="TWL-VV-kHW"/>
+                            <constraint firstItem="jtH-n3-6JR" firstAttribute="trailing" secondItem="mW3-gT-Fw0" secondAttribute="trailing" constant="40" id="Wpi-wr-FUr"/>
+                            <constraint firstItem="ATh-ov-eJR" firstAttribute="centerX" secondItem="2Gc-Yu-cGX" secondAttribute="centerX" id="aOP-q4-1xl"/>
+                            <constraint firstItem="Eyh-CR-Kd6" firstAttribute="top" secondItem="ATh-ov-eJR" secondAttribute="bottom" constant="85" id="bw1-zw-atZ"/>
+                            <constraint firstItem="1sW-Ma-ODb" firstAttribute="centerX" secondItem="2Gc-Yu-cGX" secondAttribute="centerX" id="nqj-Q6-ys9"/>
+                            <constraint firstItem="Eyh-CR-Kd6" firstAttribute="centerX" secondItem="2Gc-Yu-cGX" secondAttribute="centerX" id="xKQ-RO-SYw"/>
+                            <constraint firstItem="1sW-Ma-ODb" firstAttribute="top" secondItem="jtH-n3-6JR" secondAttribute="top" constant="50" id="zE9-AO-tTq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jtH-n3-6JR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HjU-FE-dn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2563" y="1052"/>
         </scene>
         <!--List-->
         <scene sceneID="N77-pU-Bck">

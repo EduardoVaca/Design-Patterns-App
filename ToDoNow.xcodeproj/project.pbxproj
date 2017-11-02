@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4804EF231FAB980E009A94BE /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804EF221FAB980E009A94BE /* StopWatchViewController.swift */; };
 		48135FDB1FAAB28800DBF9C1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDA1FAAB28800DBF9C1 /* Item.swift */; };
 		48135FDE1FAAB64D00DBF9C1 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */; };
 		48135FE01FAAB76200DBF9C1 /* ToDoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4804EF221FAB980E009A94BE /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
 		48135FDA1FAAB28800DBF9C1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDataSource.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */,
 				48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */,
 				48135FE11FAABC2000DBF9C1 /* TimerViewController.swift */,
+				4804EF221FAB980E009A94BE /* StopWatchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				48135FDB1FAAB28800DBF9C1 /* Item.swift in Sources */,
 				48B077CA1FA906AB0015B405 /* AppDelegate.swift in Sources */,
 				48135FE21FAABC2000DBF9C1 /* TimerViewController.swift in Sources */,
+				4804EF231FAB980E009A94BE /* StopWatchViewController.swift in Sources */,
 				48135FE01FAAB76200DBF9C1 /* ToDoDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
