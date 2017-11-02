@@ -193,14 +193,23 @@
                                 <rect key="frame" x="167" y="445" width="42" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startPressed:" destination="GQc-Qj-pOI" eventType="touchUpInside" id="4y7-UH-pIM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW3-gT-Fw0">
                                 <rect key="frame" x="296" y="448" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetPressed:" destination="GQc-Qj-pOI" eventType="touchUpInside" id="Sxg-sC-xRi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBZ-79-M3M">
                                 <rect key="frame" x="40" y="448" width="42" height="30"/>
                                 <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pausedPressed:" destination="GQc-Qj-pOI" eventType="touchUpInside" id="hzi-xo-tKK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,6 +229,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jtH-n3-6JR"/>
                     </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="ATh-ov-eJR" id="sGq-xw-d6d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjU-FE-dn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
