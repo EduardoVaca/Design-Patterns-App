@@ -95,11 +95,6 @@
                         <viewLayoutGuide key="safeArea" id="QMC-xg-XW8"/>
                     </view>
                     <navigationItem key="navigationItem" title="ToDoNow" id="Uqi-bL-KkC">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="z7b-Pq-dGg">
-                            <connections>
-                                <action selector="editTasks:" destination="Jyc-bG-2Hs" id="750-ug-bXk"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Nc-dJ-B7y">
                             <connections>
                                 <action selector="addTask:" destination="Jyc-bG-2Hs" id="aeJ-Ss-Fcd"/>
@@ -107,7 +102,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="editButton" destination="z7b-Pq-dGg" id="Ac3-zn-gky"/>
                         <outlet property="tableView" destination="bae-G6-G4M" id="mD0-sd-rem"/>
                         <segue destination="l5O-Ax-1yp" kind="show" id="aSV-4l-29o"/>
                         <segue destination="GQc-Qj-pOI" kind="show" id="lfB-al-Rvu"/>
