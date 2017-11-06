@@ -24,22 +24,19 @@ class AddTaskViewController: UIViewController {
         priorityPicker.dataSource = self
     }
     
-    func areFieldsValid() -> Bool {
-        if let _ = nameTextField.text,
-            let hours = hoursTextField.text,
-            let _ = Int(hours),
-            let minutes = minutesTextField.text,
-            let _ = Int(minutes),
-            let seconds = secondsTextField.text,
-            let _ = Int(seconds) {
-            return true
-        }
-        return false
-    }
     
     @IBAction func addTask(_ sender: Any) {
-        if areFieldsValid() {
-            print(priorityPicker.selectedRow(inComponent: 0))
+        if let name = nameTextField.text,
+            let hours = hoursTextField.text,
+            let hours_int = Int(hours),
+            let minutes = minutesTextField.text,
+            let minutes_int = Int(minutes),
+            let seconds = secondsTextField.text,
+            let seconds_int = Int(seconds),
+            let priority = Priority(rawValue: priorities[priorityPicker.selectedRow(inComponent: 0)]) {
+            ItemManager.getInstance().addTask(name: name, hours: hours_int, minutes: minutes_int, seconds: seconds_int, priority: priority)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateTable"), object: nil)
+            self.navigationController?.popViewController(animated: true)
         } else {
             let alert = UIAlertController(title: "Alert", message: "Fields incorrect", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
