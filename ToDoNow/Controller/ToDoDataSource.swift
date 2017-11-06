@@ -10,7 +10,7 @@ import UIKit
 
 class ToDoDataSource: NSObject, UITableViewDataSource {
     
-    let itemManager = ItemManager()
+    let itemManager = ItemManager.getInstance()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemManager.itemsCount
