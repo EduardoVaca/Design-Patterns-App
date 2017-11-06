@@ -38,7 +38,15 @@ class ToDoListViewController: UIViewController {
         dataSource.updateData()
         tableView.reloadData()
     }
-
+    
+    
+    @IBAction func addTask(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let addVC = storyBoard.instantiateViewController(withIdentifier: "AddTaskViewController") as! AddTaskViewController
+        
+        self.navigationController?.pushViewController(addVC, animated: true)
+    }
+    
 }
 
 extension ToDoListViewController: UITableViewDelegate {
