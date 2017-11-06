@@ -16,7 +16,8 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var itemPriorityLabel: UILabel!
     
-    var item: Item?
+    private var item: Item?
+    private var strategy: Strategy?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +41,12 @@ class ItemTableViewCell: UITableViewCell {
     
     @objc func completeItem(_ sender: UIButton) {
         if let item = item {
-            item.status = item.status == .incompleted ? .completed : .incompleted
+            if item.status == .incompleted {
+                strategy = OperationComplete()
+            } else {
+                strategy = OperationRestore()
+            }
+            strategy?.doOperation(on: item)
             NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateTable"), object: nil)
         }
     }
