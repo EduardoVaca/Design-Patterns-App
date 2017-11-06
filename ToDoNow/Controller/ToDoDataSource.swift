@@ -23,6 +23,13 @@ class ToDoDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            itemManager.removeTask(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     func updateData() {
         itemManager.sortByPriority()
     }

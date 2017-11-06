@@ -51,4 +51,8 @@ class ItemManager: NSObject {
     func addTask(name: String, hours: Int, minutes: Int, seconds: Int, priority: Priority) {
         items.append(Item(name: name, seconds: seconds + (minutes * 60) + (hours * 3600), priority: priority))
     }
+    
+    func removeTask(at index: Int) {
+        items.remove(at: index)
+    }
 }
