@@ -11,6 +11,7 @@ import UIKit
 class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     var dataSource = ToDoDataSource()
 
@@ -19,6 +20,7 @@ class ToDoListViewController: UIViewController {
         tableView.dataSource = dataSource
         tableView.rowHeight = 80
         dataSource.itemManager.sortByPriority()
+       
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "UpdateTable"), object: nil, queue: nil, using: updateTable)
     }
     
@@ -45,6 +47,17 @@ class ToDoListViewController: UIViewController {
         let addVC = storyBoard.instantiateViewController(withIdentifier: "AddTaskViewController") as! AddTaskViewController
         
         self.navigationController?.pushViewController(addVC, animated: true)
+    }
+    
+    
+    @IBAction func editTasks(_ sender: Any) {
+        if self.tableView.isEditing {
+            self.tableView.isEditing = false
+            editButton.title = "Done"
+        } else {
+            self.tableView.isEditing = true
+            editButton.title = "Edit"
+        }
     }
     
 }
