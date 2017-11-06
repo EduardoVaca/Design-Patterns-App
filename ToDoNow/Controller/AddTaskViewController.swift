@@ -10,6 +10,9 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var timerButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var hoursTextField: UITextField!
     @IBOutlet weak var minutesTextField: UITextField!
@@ -18,12 +21,39 @@ class AddTaskViewController: UIViewController {
     
     let priorities = [Priority.high.rawValue, Priority.medium.rawValue, Priority.low.rawValue]
     
+    var item: Item?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         priorityPicker.delegate = self
         priorityPicker.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let item = item {
+            titleLabel.text = item.name
+            timerButton.isHidden = false
+            addButton.setTitle("Save", for: .normal)
+            nameTextField.text = item.name
+            var seconds = item.seconds
+            let hours = Int(seconds/3600)
+            seconds -= hours * 3600
+            let minutes = Int(seconds/60)
+            seconds -= minutes * 60
+            hoursTextField.text = "\(hours)"
+            minutesTextField.text = "\(minutes)"
+            secondsTextField.text = "\(seconds)"
+            if let priorityIndex = priorities.index(of: item.priority.rawValue) {
+                priorityPicker.selectRow(priorityIndex, inComponent: 0, animated: true)
+            }
+            
+        } else {
+            timerButton.isHidden = true
+            addButton.setTitle("Add", for: .normal)
+        }
+    }
     
     @IBAction func addTask(_ sender: Any) {
         if let name = nameTextField.text,

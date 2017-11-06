@@ -101,4 +101,11 @@ extension ToDoListViewController: UITableViewDelegate {
         headerView.backgroundColor = UIColor.gray
         return headerView
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let addVC = storyBoard.instantiateViewController(withIdentifier: "AddTaskViewController") as! AddTaskViewController
+        addVC.item = ItemManager.getInstance().item(at: indexPath.row)
+        self.navigationController?.pushViewController(addVC, animated: true)
+    }
 }

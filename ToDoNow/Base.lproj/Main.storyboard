@@ -120,8 +120,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new task..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvh-k7-YIA">
-                                <rect key="frame" x="91.5" y="89" width="191" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new task..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvh-k7-YIA">
+                                <rect key="frame" x="15" y="89" width="191" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -191,6 +191,10 @@
                                     <action selector="addTask:" destination="gQL-KX-NYX" eventType="touchUpInside" id="Vwf-B0-3EU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-XJ-LFj">
+                                <rect key="frame" x="320" y="90" width="40" height="30"/>
+                                <state key="normal" title="Timer"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -199,6 +203,7 @@
                             <constraint firstItem="RCR-y5-ogu" firstAttribute="centerY" secondItem="3Ks-DZ-OFp" secondAttribute="centerY" id="3VZ-dF-sSj"/>
                             <constraint firstItem="Tl4-Hf-TEb" firstAttribute="trailing" secondItem="3BD-QW-yof" secondAttribute="trailing" constant="180" id="963-64-QCH"/>
                             <constraint firstItem="ocm-iI-BQf" firstAttribute="leading" secondItem="31P-L0-PKI" secondAttribute="leading" id="9iW-Ot-eMa"/>
+                            <constraint firstItem="Cya-XJ-LFj" firstAttribute="centerY" secondItem="Rvh-k7-YIA" secondAttribute="centerY" id="BQR-aL-eiW"/>
                             <constraint firstItem="31P-L0-PKI" firstAttribute="leading" secondItem="Tl4-Hf-TEb" secondAttribute="leading" constant="15" id="Bwq-dD-gEk"/>
                             <constraint firstItem="Rvh-k7-YIA" firstAttribute="top" secondItem="Tl4-Hf-TEb" secondAttribute="top" constant="25" id="FhD-ca-M1W"/>
                             <constraint firstItem="BST-t2-LSw" firstAttribute="leading" secondItem="ocm-iI-BQf" secondAttribute="leading" id="GNC-JS-I7J"/>
@@ -208,19 +213,21 @@
                             <constraint firstItem="Tl4-Hf-TEb" firstAttribute="trailing" secondItem="Xg2-pN-SJB" secondAttribute="trailing" constant="15" id="OGc-fU-wOv"/>
                             <constraint firstItem="Oh0-VX-EKm" firstAttribute="leading" secondItem="RCR-y5-ogu" secondAttribute="leading" id="TzY-ON-Wtl"/>
                             <constraint firstItem="Tl4-Hf-TEb" firstAttribute="trailing" secondItem="Oh0-VX-EKm" secondAttribute="trailing" constant="180" id="V4T-y3-YfG"/>
-                            <constraint firstItem="31P-L0-PKI" firstAttribute="top" secondItem="Rvh-k7-YIA" secondAttribute="bottom" constant="50" id="XKb-l7-y9d"/>
+                            <constraint firstItem="Rvh-k7-YIA" firstAttribute="leading" secondItem="31P-L0-PKI" secondAttribute="leading" id="VoV-4O-EQk"/>
+                            <constraint firstItem="31P-L0-PKI" firstAttribute="top" secondItem="Rvh-k7-YIA" secondAttribute="bottom" priority="800" constant="50" id="XKb-l7-y9d"/>
                             <constraint firstItem="THf-qD-OLx" firstAttribute="centerX" secondItem="ahA-mq-KBQ" secondAttribute="centerX" id="azH-kn-Oo4"/>
                             <constraint firstItem="Tl4-Hf-TEb" firstAttribute="trailing" secondItem="RCR-y5-ogu" secondAttribute="trailing" constant="180" id="bsQ-gH-DoI"/>
-                            <constraint firstItem="Rvh-k7-YIA" firstAttribute="centerX" secondItem="ahA-mq-KBQ" secondAttribute="centerX" id="dGX-i3-6jc"/>
                             <constraint firstItem="3Ks-DZ-OFp" firstAttribute="leading" secondItem="BST-t2-LSw" secondAttribute="leading" id="fRh-Qr-H2g"/>
                             <constraint firstItem="Oh0-VX-EKm" firstAttribute="centerY" secondItem="BST-t2-LSw" secondAttribute="centerY" id="g4t-ad-DMY"/>
                             <constraint firstItem="Xg2-pN-SJB" firstAttribute="leading" secondItem="3BD-QW-yof" secondAttribute="leading" id="gko-PC-ThK"/>
                             <constraint firstItem="RCR-y5-ogu" firstAttribute="leading" secondItem="3Ks-DZ-OFp" secondAttribute="trailing" constant="20" id="h10-PM-3CK"/>
                             <constraint firstItem="WdU-y6-Zft" firstAttribute="top" secondItem="3Ks-DZ-OFp" secondAttribute="bottom" constant="35" id="hhq-x2-n20"/>
                             <constraint firstItem="38I-17-kaK" firstAttribute="top" secondItem="WdU-y6-Zft" secondAttribute="bottom" constant="5" id="k47-9r-WmL"/>
+                            <constraint firstItem="Cya-XJ-LFj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rvh-k7-YIA" secondAttribute="trailing" constant="20" id="msy-dG-Bmc"/>
                             <constraint firstItem="Tl4-Hf-TEb" firstAttribute="bottom" secondItem="THf-qD-OLx" secondAttribute="bottom" constant="35" id="n9H-JS-6fd"/>
                             <constraint firstItem="BST-t2-LSw" firstAttribute="top" secondItem="ocm-iI-BQf" secondAttribute="bottom" constant="35" id="ocy-7R-J8p"/>
                             <constraint firstItem="38I-17-kaK" firstAttribute="trailing" secondItem="Xg2-pN-SJB" secondAttribute="trailing" id="ppL-yy-sy9"/>
+                            <constraint firstItem="Cya-XJ-LFj" firstAttribute="trailing" secondItem="Xg2-pN-SJB" secondAttribute="trailing" id="rSf-Gh-3uc"/>
                             <constraint firstItem="38I-17-kaK" firstAttribute="leading" secondItem="WdU-y6-Zft" secondAttribute="leading" id="tHZ-z1-5jR"/>
                             <constraint firstItem="WdU-y6-Zft" firstAttribute="leading" secondItem="3Ks-DZ-OFp" secondAttribute="leading" id="tfr-ks-pdp"/>
                             <constraint firstItem="3BD-QW-yof" firstAttribute="centerY" secondItem="ocm-iI-BQf" secondAttribute="centerY" id="tqC-lr-o4k"/>
@@ -228,11 +235,14 @@
                         <viewLayoutGuide key="safeArea" id="Tl4-Hf-TEb"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="THf-qD-OLx" id="iSv-pB-NBG"/>
                         <outlet property="hoursTextField" destination="3BD-QW-yof" id="iyZ-d5-9U1"/>
                         <outlet property="minutesTextField" destination="Oh0-VX-EKm" id="5W8-nD-McU"/>
                         <outlet property="nameTextField" destination="Xg2-pN-SJB" id="nXP-oU-6uu"/>
                         <outlet property="priorityPicker" destination="38I-17-kaK" id="0z7-fZ-l6E"/>
                         <outlet property="secondsTextField" destination="RCR-y5-ogu" id="y8j-R7-eT8"/>
+                        <outlet property="timerButton" destination="Cya-XJ-LFj" id="P2R-zK-ObG"/>
+                        <outlet property="titleLabel" destination="Rvh-k7-YIA" id="Ot4-sq-vhE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChH-vt-LRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
