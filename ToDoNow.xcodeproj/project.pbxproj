@@ -15,6 +15,7 @@
 		48135FDE1FAAB64D00DBF9C1 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */; };
 		48135FE01FAAB76200DBF9C1 /* ToDoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */; };
 		48135FE21FAABC2000DBF9C1 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48135FE11FAABC2000DBF9C1 /* TimerViewController.swift */; };
+		4821D5251FB23041005CC35D /* Memento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4821D5241FB23041005CC35D /* Memento.swift */; };
 		482BAE6F1FB0E3C400CD374B /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BAE6E1FB0E3C400CD374B /* Strategy.swift */; };
 		48435CFE1FB0E9DB00F79C7C /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48435CFD1FB0E9DB00F79C7C /* AddTaskViewController.swift */; };
 		48B077CA1FA906AB0015B405 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B077C91FA906AB0015B405 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		48135FDD1FAAB64D00DBF9C1 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		48135FDF1FAAB76200DBF9C1 /* ToDoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDataSource.swift; sourceTree = "<group>"; };
 		48135FE11FAABC2000DBF9C1 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		4821D5241FB23041005CC35D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
 		482BAE6E1FB0E3C400CD374B /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
 		48435CFD1FB0E9DB00F79C7C /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		48B077C61FA906AB0015B405 /* ToDoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,7 @@
 				48135FDA1FAAB28800DBF9C1 /* Item.swift */,
 				4804EF271FABA042009A94BE /* ItemManager.swift */,
 				482BAE6E1FB0E3C400CD374B /* Strategy.swift */,
+				4821D5241FB23041005CC35D /* Memento.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				48435CFE1FB0E9DB00F79C7C /* AddTaskViewController.swift in Sources */,
 				4804EF261FAB9DBD009A94BE /* ItemTableViewCell.swift in Sources */,
 				48135FE21FAABC2000DBF9C1 /* TimerViewController.swift in Sources */,
+				4821D5251FB23041005CC35D /* Memento.swift in Sources */,
 				4804EF231FAB980E009A94BE /* StopWatchViewController.swift in Sources */,
 				48135FE01FAAB76200DBF9C1 /* ToDoDataSource.swift in Sources */,
 			);

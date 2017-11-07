@@ -22,6 +22,8 @@ class AddTaskViewController: UIViewController {
     let priorities = [Priority.high.rawValue, Priority.medium.rawValue, Priority.low.rawValue]
     
     var item: Item?
+    var memento: Memento?
+    var savedItem: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,20 @@ class AddTaskViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         customViewBasedOnMode()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if !savedItem {
+            if let memento = memento,
+                let priority = Priority(rawValue: priorities[priorityPicker.selectedRow(inComponent: 0)]) {
+                memento.saveStateToMemento(name: nameTextField.text,
+                                           hours: hoursTextField.text,
+                                           minutes: minutesTextField.text,
+                                           seconds: secondsTextField.text,
+                                           priority: priority)
+            }
+        }
     }
     
     func customViewBasedOnMode() {
@@ -51,8 +67,16 @@ class AddTaskViewController: UIViewController {
             if let priorityIndex = priorities.index(of: item.priority.rawValue) {
                 priorityPicker.selectRow(priorityIndex, inComponent: 0, animated: true)
             }
-            
         } else {
+            if let memento = memento {
+                nameTextField.text = memento.name
+                hoursTextField.text = memento.hours
+                minutesTextField.text = memento.minutes
+                secondsTextField.text = memento.seconds
+                if let priorityIndex = priorities.index(of: memento.priority.rawValue) {
+                    priorityPicker.selectRow(priorityIndex, inComponent: 0, animated: true)
+                }
+            }
             timerButton.isHidden = true
             addButton.setTitle("Add", for: .normal)
         }
@@ -74,6 +98,10 @@ class AddTaskViewController: UIViewController {
             } else {
                 ItemManager.getInstance().addTask(name: name, hours: hours_int, minutes: minutes_int, seconds: seconds_int, priority: priority)
             }
+            if let memento = memento {
+                memento.cleanMemento()
+            }
+            savedItem = true
             NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateTable"), object: nil)
             self.navigationController?.popViewController(animated: true)
         } else {
@@ -82,7 +110,6 @@ class AddTaskViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
 }
 
 extension AddTaskViewController: UIPickerViewDataSource,UIPickerViewDelegate {

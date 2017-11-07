@@ -13,6 +13,7 @@ class ToDoListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!    
     
     var dataSource = ToDoDataSource()
+    let memento = Memento()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class ToDoListViewController: UIViewController {
     @IBAction func addTask(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let addVC = storyBoard.instantiateViewController(withIdentifier: "AddTaskViewController") as! AddTaskViewController
-        
+        addVC.memento = memento
         self.navigationController?.pushViewController(addVC, animated: true)
     }
     
