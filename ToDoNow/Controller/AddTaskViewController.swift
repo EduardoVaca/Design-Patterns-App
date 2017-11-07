@@ -31,7 +31,10 @@ class AddTaskViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        customViewBasedOnMode()
+    }
+    
+    func customViewBasedOnMode() {
         if let item = item {
             titleLabel.text = item.name
             timerButton.isHidden = false
@@ -64,7 +67,13 @@ class AddTaskViewController: UIViewController {
             let seconds = secondsTextField.text,
             let seconds_int = Int(seconds),
             let priority = Priority(rawValue: priorities[priorityPicker.selectedRow(inComponent: 0)]) {
-            ItemManager.getInstance().addTask(name: name, hours: hours_int, minutes: minutes_int, seconds: seconds_int, priority: priority)
+            if let item = item {
+                item.name = name
+                item.seconds = seconds_int + (minutes_int * 60) + (hours_int * 3600)
+                item.priority = priority
+            } else {
+                ItemManager.getInstance().addTask(name: name, hours: hours_int, minutes: minutes_int, seconds: seconds_int, priority: priority)
+            }
             NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateTable"), object: nil)
             self.navigationController?.popViewController(animated: true)
         } else {
