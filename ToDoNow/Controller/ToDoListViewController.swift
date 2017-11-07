@@ -109,4 +109,12 @@ extension ToDoListViewController: UITableViewDelegate {
         addVC.item = ItemManager.getInstance().item(at: indexPath.row)
         self.navigationController?.pushViewController(addVC, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if ItemManager.getInstance().item(at: indexPath.row).status == .completed {
+            return nil
+        } else {
+            return indexPath
+        }
+    }
 }

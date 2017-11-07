@@ -20,6 +20,7 @@ class ToDoDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemTableViewCell
         let item = itemManager.item(at: indexPath.row)
         cell.configure(with: item)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
     

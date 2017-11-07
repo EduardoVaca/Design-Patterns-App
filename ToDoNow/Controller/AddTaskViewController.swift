@@ -56,14 +56,10 @@ class AddTaskViewController: UIViewController {
             timerButton.isHidden = false
             addButton.setTitle("Save", for: .normal)
             nameTextField.text = item.name
-            var seconds = item.seconds
-            let hours = Int(seconds/3600)
-            seconds -= hours * 3600
-            let minutes = Int(seconds/60)
-            seconds -= minutes * 60
-            hoursTextField.text = "\(hours)"
-            minutesTextField.text = "\(minutes)"
-            secondsTextField.text = "\(seconds)"
+            var timeValues = Utils.timeValues(seconds: item.seconds)
+            hoursTextField.text = "\(timeValues.0)"
+            minutesTextField.text = "\(timeValues.1)"
+            secondsTextField.text = "\(timeValues.2)"
             if let priorityIndex = priorities.index(of: item.priority.rawValue) {
                 priorityPicker.selectRow(priorityIndex, inComponent: 0, animated: true)
             }

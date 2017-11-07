@@ -34,14 +34,10 @@ class TimerViewController: UIViewController {
             minutesTextField.isEnabled = false
             secondsTextField.isEnabled = false
             seconds = item.seconds
-            var secondsTemp = seconds
-            let hours = secondsTemp/3600
-            hoursTextField.text = "\(hours)"
-            secondsTemp -= hours * 3600
-            let minutes = secondsTemp/60
-            minutesTextField.text = "\(minutes)"
-            secondsTemp -= minutes*60
-            secondsTextField.text = "\(secondsTemp)"
+            let timeValues = Utils.timeValues(seconds: seconds)
+            hoursTextField.text = "\(timeValues.0)"
+            minutesTextField.text = "\(timeValues.1)"
+            secondsTextField.text = "\(timeValues.2)"
         }
     }
     
