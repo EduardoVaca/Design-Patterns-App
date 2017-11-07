@@ -6,7 +6,7 @@
 //  Copyright © 2017 Vaca. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Utils {
     
@@ -24,5 +24,11 @@ class Utils {
         let minutes = secondsTemp/60
         secondsTemp -= minutes*60
         return (hours, minutes, secondsTemp)
+    }
+    
+    static func presentAlert(vc: UIViewController, title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        vc.present(alert, animated: true, completion: nil)
     }
 }

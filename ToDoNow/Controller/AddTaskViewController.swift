@@ -101,9 +101,7 @@ class AddTaskViewController: UIViewController {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateTable"), object: nil)
             self.navigationController?.popViewController(animated: true)
         } else {
-            let alert = UIAlertController(title: "Alert", message: "Fields incorrect", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            Utils.presentAlert(vc: self, title: "Alert", message: "Fields incorrect")
         }
     }
     

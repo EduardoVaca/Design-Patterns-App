@@ -29,6 +29,10 @@ class TimerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        customView()
+    }
+    
+    func customView() {
         if let item = item {
             hoursTextField.isEnabled = false
             minutesTextField.isEnabled = false
@@ -38,13 +42,14 @@ class TimerViewController: UIViewController {
             hoursTextField.text = "\(timeValues.0)"
             minutesTextField.text = "\(timeValues.1)"
             secondsTextField.text = "\(timeValues.2)"
+            timerLabel.text = Utils.timeString(time: TimeInterval(seconds))
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let item = item {
-            item.timeSpent += (item.seconds - seconds - 1)
+            item.timeSpent += (item.seconds - seconds)
             NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateTable"), object: nil)
         }
     }
@@ -70,7 +75,11 @@ class TimerViewController: UIViewController {
     @objc func updateTimer() {
         if seconds < 0 {
             timer.invalidate()
-            // SEND NOTIFICATION OF STOP
+            if let item = item {
+                Utils.presentAlert(vc: self, title: "Time's up!", message: "No more time for: \(item.name)")
+            } else {
+                Utils.presentAlert(vc: self, title: "Time's up!", message: "No more time left")
+            }
         } else {
             timerLabel.text = Utils.timeString(time: TimeInterval(seconds))
             seconds -= 1
