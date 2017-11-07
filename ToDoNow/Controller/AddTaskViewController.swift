@@ -110,6 +110,14 @@ class AddTaskViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func goToTimer(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let timerVC = storyBoard.instantiateViewController(withIdentifier: "TimerViewController") as! TimerViewController
+        timerVC.item = item
+        self.navigationController?.pushViewController(timerVC, animated: true)
+    }
+    
 }
 
 extension AddTaskViewController: UIPickerViewDataSource,UIPickerViewDelegate {

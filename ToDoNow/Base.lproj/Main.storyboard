@@ -194,6 +194,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-XJ-LFj">
                                 <rect key="frame" x="320" y="90" width="40" height="30"/>
                                 <state key="normal" title="Timer"/>
+                                <connections>
+                                    <action selector="goToTimer:" destination="gQL-KX-NYX" eventType="touchUpInside" id="tze-4Q-rzv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,6 +246,7 @@
                         <outlet property="secondsTextField" destination="RCR-y5-ogu" id="y8j-R7-eT8"/>
                         <outlet property="timerButton" destination="Cya-XJ-LFj" id="P2R-zK-ObG"/>
                         <outlet property="titleLabel" destination="Rvh-k7-YIA" id="Ot4-sq-vhE"/>
+                        <segue destination="l5O-Ax-1yp" kind="show" id="vNH-wS-a1j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChH-vt-LRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -461,4 +465,7 @@
             <point key="canvasLocation" x="721.60000000000002" y="346.32683658170919"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vNH-wS-a1j"/>
+    </inferredMetricsTieBreakers>
 </document>
