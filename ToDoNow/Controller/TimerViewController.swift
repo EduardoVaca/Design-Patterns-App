@@ -45,6 +45,14 @@ class TimerViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let item = item {
+            item.timeSpent += (item.seconds - seconds - 1)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateTable"), object: nil)
+        }
+    }
+    
     func setTotalSeconds() -> Bool {
         if let seconds = secondsTextField.text,
             let secondsValue = Int(seconds),
