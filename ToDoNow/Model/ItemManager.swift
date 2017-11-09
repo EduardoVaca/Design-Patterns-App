@@ -8,7 +8,12 @@
 
 import UIKit
 
-class ItemManager: NSObject {
+protocol Stored {
+    
+    func store()
+}
+
+class ItemManager: NSObject, Stored {
     
     private static let instance = ItemManager()
     private var items: [Item]
@@ -16,11 +21,13 @@ class ItemManager: NSObject {
     var itemsCount: Int { return items.count }
     
     private override init() {
-        self.items = [
-        Item(name: "Second", seconds: 210, priority: Priority.medium),
-        Item(name: "Last", seconds: 40, priority: Priority.low),
-        Item(name: "First", seconds: 30, priority: Priority.high)
-        ]
+        if let encodedItems = UserDefaults.standard.object(forKey: "items") as? Data,
+            let items = NSKeyedUnarchiver.unarchiveObject(with: encodedItems) as? [Item] {
+            self.items = items
+        }
+        else {
+            self.items = []
+        }
     }
     
     static func getInstance() -> ItemManager{
@@ -58,5 +65,13 @@ class ItemManager: NSObject {
     
     func removeTask(at index: Int) {
         items.remove(at: index)
+    }
+    
+    func store() {
+        print("DYING2")
+        let userDefaults = UserDefaults.standard
+        let encodedItems: Data = NSKeyedArchiver.archivedData(withRootObject: items)
+        userDefaults.set(encodedItems, forKey: "items")
+        userDefaults.synchronize()
     }
 }
