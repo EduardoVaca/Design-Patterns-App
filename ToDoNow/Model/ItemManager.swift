@@ -67,8 +67,7 @@ class ItemManager: NSObject, Stored {
         items.remove(at: index)
     }
     
-    func store() {
-        print("DYING2")
+    func store() {        
         let userDefaults = UserDefaults.standard
         let encodedItems: Data = NSKeyedArchiver.archivedData(withRootObject: items)
         userDefaults.set(encodedItems, forKey: "items")
