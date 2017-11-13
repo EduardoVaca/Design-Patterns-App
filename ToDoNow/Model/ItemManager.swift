@@ -27,6 +27,8 @@ class ItemManager: NSObject, Stored {
     private static let instance = ItemManager()
     /// Items of ToDoList
     private var items: [Item]
+    /// Item Factory
+    private let factory = ItemFactory()
     
     var itemsCount: Int { return items.count }
     
@@ -88,7 +90,8 @@ class ItemManager: NSObject, Stored {
      - Parameter priority: Item Priority
      */
     func addTask(name: String, hours: Int, minutes: Int, seconds: Int, priority: Priority) {
-        items.append(Item(name: name, seconds: seconds + (minutes * 60) + (hours * 3600), priority: priority))
+        let newItem = factory.getNewTask(name: name, hours: hours, minutes: minutes, seconds: seconds, priority: priority)
+        items.append(newItem)
     }
     
     /**

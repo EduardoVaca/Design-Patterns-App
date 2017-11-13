@@ -22,6 +22,7 @@
 		48B077CF1FA906AB0015B405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B077CD1FA906AB0015B405 /* Main.storyboard */; };
 		48B077D11FA906AB0015B405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B077D01FA906AB0015B405 /* Assets.xcassets */; };
 		48B077D41FA906AB0015B405 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B077D21FA906AB0015B405 /* LaunchScreen.storyboard */; };
+		48DC49101FBA560A00812CA8 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DC490F1FBA560A00812CA8 /* ItemFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		48B077D01FA906AB0015B405 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48B077D31FA906AB0015B405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48B077D51FA906AB0015B405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48DC490F1FBA560A00812CA8 /* ItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				4804EF271FABA042009A94BE /* ItemManager.swift */,
 				482BAE6E1FB0E3C400CD374B /* Strategy.swift */,
 				4821D5241FB23041005CC35D /* Memento.swift */,
+				48DC490F1FBA560A00812CA8 /* ItemFactory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				48135FE21FAABC2000DBF9C1 /* TimerViewController.swift in Sources */,
 				4821D5251FB23041005CC35D /* Memento.swift in Sources */,
 				4804EF231FAB980E009A94BE /* StopWatchViewController.swift in Sources */,
+				48DC49101FBA560A00812CA8 /* ItemFactory.swift in Sources */,
 				48135FE01FAAB76200DBF9C1 /* ToDoDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
