@@ -8,8 +8,11 @@
 
 import UIKit
 
+/**
+ Controller responsible for adding a new task from the UI
+ */
 class AddTaskViewController: UIViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timerButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
@@ -50,13 +53,19 @@ class AddTaskViewController: UIViewController {
         }
     }
     
+    /**
+     Customs view based on item
+     If item exists, fill info in edit mode
+     If memento exists, fill info
+     Else wait for add event
+     */
     func customViewBasedOnMode() {
         if let item = item {
             titleLabel.text = item.name
             timerButton.isHidden = false
             addButton.setTitle("Save", for: .normal)
             nameTextField.text = item.name
-            var timeValues = Utils.timeValues(seconds: item.seconds)
+            let timeValues = Utils.timeValues(seconds: item.seconds)
             hoursTextField.text = "\(timeValues.0)"
             minutesTextField.text = "\(timeValues.1)"
             secondsTextField.text = "\(timeValues.2)"
@@ -78,6 +87,9 @@ class AddTaskViewController: UIViewController {
         }
     }
     
+    /**
+     Adds a task into ToDoList
+     */
     @IBAction func addTask(_ sender: Any) {
         if let name = nameTextField.text,
             let hours = hoursTextField.text,
@@ -105,6 +117,9 @@ class AddTaskViewController: UIViewController {
         }
     }
     
+    /**
+     Instantiates TimerViewController passing the item info to start the timer
+     */
     @IBAction func goToTimer(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let timerVC = storyBoard.instantiateViewController(withIdentifier: "TimerViewController") as! TimerViewController
@@ -114,6 +129,9 @@ class AddTaskViewController: UIViewController {
     
 }
 
+/**
+ Extension for conforming UIPickerViewDelegate (used in Priority selection)
+ */
 extension AddTaskViewController: UIPickerViewDataSource,UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

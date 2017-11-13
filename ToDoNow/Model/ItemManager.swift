@@ -80,7 +80,7 @@ class ItemManager: NSObject, Stored {
     }
     
     /**
-     Adds a task to the items list
+     Adds a task to the items list following Factory Pattern
      - Parameter name: name of the item
      - Parameter hours: Hours of duration
      - Parameter minutes: Minutes of duration
@@ -92,7 +92,7 @@ class ItemManager: NSObject, Stored {
     }
     
     /**
-     Adds a task to the items list
+     Adds a task to the items list following Factory Pattern
      - Parameter item: Item to be added
      */
     func addTask(item: Item) {
