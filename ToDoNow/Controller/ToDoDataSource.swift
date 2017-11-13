@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+ Class responsible for managing which element is displayed in which cell
+ Iterator Pattern implementated in a different way via DataSource for iOS
+ */
 class ToDoDataSource: NSObject, UITableViewDataSource {
     
     let itemManager = ItemManager.getInstance()
@@ -31,6 +35,9 @@ class ToDoDataSource: NSObject, UITableViewDataSource {
         }
     }
     
+    /**
+     Updates Mediator data by calling it's method of sort
+     */
     func updateData() {
         itemManager.sortByPriority()
     }
