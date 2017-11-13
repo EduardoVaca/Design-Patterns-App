@@ -83,6 +83,7 @@ func applicationDidEnterBackground(_ application: UIApplication) {
 ## 10. State
 Lastly, in State pattern a class behavior changes based on its state. ```UITableView``` class provided by Apple has this pattern by default.
 It has two states:
-- normal
-- onEditing
+- normal.
+- onEditing.
+
 On each state the table has a different behavior and UI events trigger different methods. So by using UITableView I had this pattern.
