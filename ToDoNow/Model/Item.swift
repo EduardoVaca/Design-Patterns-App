@@ -8,17 +8,44 @@
 
 import Foundation
 
+/**
+ Represents the priority of an item
+ ```
+ case high
+ case medium
+ case low
+ ```
+ */
 enum Priority: String {
+    /// Item has high priority
     case high = "High"
+    
+    /// Item has medium priority
     case medium = "Medium"
+    
+    /// Item has low priority
     case low = "Low"
 }
 
+/**
+ Represents the status of an item
+ ```
+ case completed
+ case incompleted
+ ```
+ */
 enum Status: Int {
+    /// Item already completed
     case completed
+    
+    /// Item to be completed
     case incompleted
 }
 
+/**
+ Item for ToDoList
+ Conforms NSObject and NSCoding to be encoded when app terminating and to be decoded when app launches
+ */
 class Item: NSObject, NSCoding {
     
     var name: String
@@ -27,6 +54,14 @@ class Item: NSObject, NSCoding {
     var priority: Priority
     var status: Status
     
+    /**
+     Item initializer
+     - Parameter name: Item name
+     - Parameter seconds: Item duration in seconds
+     - Parameter priority: Item Priority
+     - Parameter timeSpent: Time already spent on item
+     - Parameter status: Item status
+     */
     init(name: String, seconds: Int, priority: Priority, timeSpent: Int = 0, status: Status = .incompleted) {
         self.name = name
         self.seconds = seconds
