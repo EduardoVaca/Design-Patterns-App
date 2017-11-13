@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Class responsible for customizing the UI of a cell based on an item
+ */
 class ItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var itemNameLabel: UILabel!
@@ -23,13 +26,11 @@ class ItemTableViewCell: UITableViewCell {
         super.awakeFromNib()
         completeButton.addTarget(self, action: #selector(ItemTableViewCell.completeItem(_:)), for: .touchUpInside)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    /**
+     Configures the UI of the cell
+     - Parameter item: Item to be used in customizing UI
+     */
     func configure(with item: Item) {
         itemNameLabel.text = item.name
         itemDurationLabel.text = "Duration: \(Utils.timeString(time: TimeInterval(item.seconds)))"
@@ -39,6 +40,11 @@ class ItemTableViewCell: UITableViewCell {
         self.item = item
     }
     
+    /**
+     Method to be executed when complete button is pressed
+     Uses Strategy Pattern to do an Operation based on the status of the item
+     Post notification of change
+     */
     @objc func completeItem(_ sender: UIButton) {
         if let item = item {
             if item.status == .incompleted {
