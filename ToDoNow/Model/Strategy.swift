@@ -8,10 +8,21 @@
 
 import Foundation
 
+/**
+ Protocol following Strategy Patter
+ */
 protocol Strategy {
+    /**
+     Method for doing an operation on an item
+     - Parameter item: Item to use
+     */
     func doOperation(on item: Item)
 }
 
+/**
+ Operation to restore an item in ToDoList
+ Implements Strategy
+ */
 class OperationRestore: Strategy {
     
     func doOperation(on item: Item) {
@@ -19,6 +30,10 @@ class OperationRestore: Strategy {
     }
 }
 
+/**
+ Operation to complete an item in ToDoList
+ Implements Strategy
+ */
 class OperationComplete: Strategy {
     
     func doOperation(on item: Item) {
