@@ -1,6 +1,10 @@
 # Design-Patterns-App
 
-This app was a project for Software Architecture Design were we had to implmement a Timer/ToDo app with as much Design Patterns as possible. I was able to inculde the following:
+This app was a project for Software Architecture Design were we had to implmement a Timer/ToDo app with as much Design Patterns as possible. 
+
+You can find the video of the app [here](https://youtu.be/pZ1JH00lnUs).
+
+In the project I was able to inculde the following patterns:
 
 ## 1. MVC
 By default an iOS app follows the Model View Controller pattern. You have your controllers, models and UI files for the views. 
